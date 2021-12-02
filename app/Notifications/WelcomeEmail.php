@@ -41,8 +41,12 @@ class WelcomeEmail extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
+                    ->greeting('Hello! ')
+                    ->subject('Welcome to U-Trail Courier Services')
+                    ->line('Welcome to U-Trail Courier services.')
+                    ->line('Its Our pleasure to serve you.')
+                    ->action('Get Started', url('/'))
+                    ->line('Its Our pleasure to serve you.')
                     ->line('Thank you for using our application!');
     }
 
