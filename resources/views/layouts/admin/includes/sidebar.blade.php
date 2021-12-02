@@ -11,9 +11,9 @@
                       <h6>General             </h6>
                     </div>
                   </li>
-                  <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="home"></i><span>Dashboard</span></a>
+                  <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="home"></i><span>Settings</span></a>
                     <ul class="nav-submenu menu-content">
-                      <li><a href="index.html">Default</a></li>
+                      <li><a href="{{ route('admin.routes.index') }}">Routes</a></li>
                       <li><a href="dashboard-02.html">Ecommerce</a></li>
                     </ul>
                   </li>

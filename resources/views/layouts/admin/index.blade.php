@@ -10,7 +10,7 @@
     <meta name="author" content="pixelstrap">
     <link rel="icon" href="../assets/images/favicon.png" type="image/x-icon">
     <link rel="shortcut icon" href="../assets/images/favicon.png" type="image/x-icon">
-    <title>@yield('title') || U Trail</title>
+    <title>@yield('title') || {{ Str::upper(config('app.name')) }}</title>
 
     @include('layouts.admin.includes.header')
 

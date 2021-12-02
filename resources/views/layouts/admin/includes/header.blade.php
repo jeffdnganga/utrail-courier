@@ -19,6 +19,8 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/date-picker.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/prism.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/vector-map.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/datatables.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/datatable-extension.css') }}">
     <!-- Plugins css Ends-->
     <!-- Bootstrap css-->
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/bootstrap.css') }}">
@@ -27,3 +29,6 @@
     <link id="color" rel="stylesheet" href="{{ asset('admin/css/color-1.css" media="screen') }}">
     <!-- Responsive css-->
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/responsive.css') }}">
+
+    {{-- Toastr --}}
+    <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">

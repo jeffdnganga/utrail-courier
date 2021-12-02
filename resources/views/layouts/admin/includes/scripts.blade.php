@@ -35,9 +35,49 @@
     <script src="{{ asset('admin/js/datepicker/date-picker/datepicker.js') }}"></script>
     <script src="{{ asset('admin/js/datepicker/date-picker/datepicker.en.js') }}"></script>
     <script src="{{ asset('admin/js/datepicker/date-picker/datepicker.custom.js') }}"></script>
+
+    <script src="{{ asset('admin/js/datatable/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('admin/js/datatable/datatable-extension/dataTables.buttons.min.js') }}"></script>
+    <script src="{{ asset('admin/js/datatable/datatable-extension/jszip.min.js') }}"></script>
+    <script src="{{ asset('admin/js/datatable/datatable-extension/buttons.colVis.min.js') }}"></script>
+    <script src="{{ asset('admin/js/datatable/datatable-extension/pdfmake.min.js') }}"></script>
+    <script src="{{ asset('admin/js/datatable/datatable-extension/vfs_fonts.js') }}"></script>
+    <script src="{{ asset('admin/js/datatable/datatable-extension/dataTables.autoFill.min.js') }}"></script>
+    <script src="{{ asset('admin/js/datatable/datatable-extension/dataTables.select.min.js') }}"></script>
+    <script src="{{ asset('admin/js/datatable/datatable-extension/buttons.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('admin/js/datatable/datatable-extension/buttons.html5.min.js') }}"></script>
+    <script src="{{ asset('admin/js/datatable/datatable-extension/buttons.print.min.js') }}"></script>
+    <script src="{{ asset('admin/js/datatable/datatable-extension/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('admin/js/datatable/datatable-extension/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ asset('admin/js/datatable/datatable-extension/responsive.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('admin/js/datatable/datatable-extension/dataTables.keyTable.min.js') }}"></script>
+    <script src="{{ asset('admin/js/datatable/datatable-extension/dataTables.colReorder.min.js') }}"></script>
+    <script src="{{ asset('admin/js/datatable/datatable-extension/dataTables.fixedHeader.min.js') }}"></script>
+    <script src="{{ asset('admin/js/datatable/datatable-extension/dataTables.rowReorder.min.js') }}"></script>
+    <script src="{{ asset('admin/js/datatable/datatable-extension/dataTables.scroller.min.js') }}"></script>
+    <script src="{{ asset('admin/js/datatable/datatable-extension/custom.js') }}"></script>
+    <script src="{{ asset('admin/js/tooltip-init.js') }}"></script>
     <!-- Plugins JS Ends-->
     <!-- Theme js-->
     <script src="{{ asset('admin/js/script.js') }}"></script>
     <script src="{{ asset('admin/js/theme-customizer/customizer.js') }}"></script>
     <!-- login js-->
     <!-- Plugin used-->
+
+
+    {{-- Toastr --}}
+    <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+        {!! Toastr::message() !!}
+         <script>
+            @if($errors->any())
+              @foreach($errors->all() as $error)
+                toastr.error('{{ $error }}', 'Error', {
+                  closeButton:true,
+                  progressBar:true,
+                });
+              @endforeach
+            @endif
+        </script>
+
+
+<script src="https://kit.fontawesome.com/c99e7cdcbd.js" crossorigin="anonymous"></script>
