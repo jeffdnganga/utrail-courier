@@ -1,15 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Transporter;
 
 use App\Http\Controllers\Controller;
-use App\Models\Route;
+use App\Models\Bid;
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Str;
-use Brian2694\Toastr\Facades\Toastr;
 
-class RouteController extends Controller
+class BidController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +17,7 @@ class RouteController extends Controller
      */
     public function index()
     {
-        $routes = Route::latest()->get();
-        return view('admin.routes.index', compact('routes'));
+        //
     }
 
     /**
@@ -41,23 +39,20 @@ class RouteController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'source' => 'required',
-            'destination' => 'required'
+            'amount'=>'required',
+            'time'=>'required'
         ]);
 
-        $route = new Route();
+        $bid = new Bid();
+        $bid->delivery_id = $request->delivery_id;
+        $bid->amount = $request->amount;
+        $bid->proposed_date = $request->date;
+        $bid->proposed_time = $request->time;
+        $bid->desc = $request->desc;
+        $bid->user_id = Auth::id();
+        $bid->save();
 
-        $source = Str::ucfirst($request->source);
-        $destination = Str::ucfirst($request->destination);
-
-
-        $route->name = $source . ' ' . $destination;
-        $route->source = $source;
-        $route->destination = $destination;
-        $route->user_id = Auth::id();
-        $route->save();
-
-        Toastr::success('Route Successfully Saved', 'Success');
+        Toastr::success('Bid Successfully Placed', 'Success');
         return redirect()->back();
     }
 
@@ -92,25 +87,7 @@ class RouteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'source' => 'required',
-            'destination' => 'required'
-        ]);
-
-        $route = Route::findOrFail($id);
-
-        $source = Str::ucfirst($request->source);
-        $destination = Str::ucfirst($request->destination);
-
-
-        $route->name = $source . ' ' . $destination;
-        $route->source = $source;
-        $route->destination = $destination;
-        // $route->user_id = Auth::id();
-        $route->save();
-
-        Toastr::success('Route Successfully Updated', 'Success');
-        return redirect()->back();
+        //
     }
 
     /**

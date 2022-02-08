@@ -1,6 +1,6 @@
 @extends('layouts.admin.index')
 
-@section('title', 'Routes')
+@section('title', 'SERVICES')
 
 @section('content')
  <div class="container-fluid">
@@ -38,7 +38,7 @@
             </div>
           </div>
 
- <div class="container-fluid">
+     <div class="container-fluid">
             <div class="row">
               <div class="col-sm-12">
                 <div class="card">
@@ -52,8 +52,8 @@
                       maiores soluta architecto harum iste hic et quas consequuntur!</span>
                       </div>
                       <div class="col-sm-2">
-                        <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-original-title="test" data-bs-target="#createRouteModal" data-bs-original-title="" title="">
-                          <i class="fas fa-plus"></i> New Route
+                        <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-original-title="test" data-bs-target="#createServiceModal" data-bs-original-title="" title="">
+                          <i class="fas fa-plus"></i> New Service
                         </button>
                       </div>
                     </div>
@@ -64,43 +64,55 @@
                         <thead>
                           <tr>
                             <th>ID</th>
-                            <th>SOURCE</th>
-                            <th>DESTINATION</th>
+                            <th>DELIVERY TYPE</th>
+                            <th>OFFERED?</th>
                             <th>CREATED BY</th>
                             <th>CREATED AT</th>
                             <th>EDIT</th>
-                            {{-- <th>DELETE</th> --}}
+                            <th>DELETE</th>
                           </tr>
                         </thead>
                         <tfoot>
                           <tr>
                             <th>ID</th>
-                            <th>SOURCE</th>
-                            <th>DESTINATION</th>
+                            <th>NAME</th>
+                            <th>OFFERED?</th>
                             <th>CREATED BY</th>
                             <th>CREATED AT</th>
                             <th>EDIT</th>
-                            {{-- <th>DELETE</th> --}}
+                            <th>DELETE</th>
                           </tr>
                         </tfoot>
                       <tbody>
-                        @foreach ($routes as $key=>$route)
+                        @foreach ($services as $key=>$service)
                             <tr>
                               <td>{{ $key + 1 }}</td>
-                              <td>{{ $route->source }}</td>
-                              <td>{{ $route->destination }}</td>
-                              <td>{{ $route->users->name }}</td>
-                              <td>{{ $route->created_at->toFormattedDateString() }}</td>
+                              <td>{{ $service->name }}</td>
                               <td>
-                                <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-original-title="test" data-bs-target="#editRoute-{{ $route->id }}" data-bs-original-title="" title="">
+                                  @if ($service->status)
+                                      <span class="badge badge-primary">Yes</span>
+                                  @else
+                                      <span class="badge badge-secondary">No</span>
+                                  @endif
+                              </td>
+                              <td>{{ $service->users->name }}</td>
+                              <td>{{ $service->created_at->toFormattedDateString() }}</td>
+                              <td>
+                                <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-original-title="test" data-bs-target="#editService-{{ $service->id }}" data-bs-original-title="" title="">
                                   <i class="fas fa-edit"></i>
                                 </button>
-                                @include('admin.routes.edit')
+                                @include('admin.service.edit')
                               </td>
                               {{-- <td>
                                 <a href="{{ route('home') }}">Good</a>
                               </td> --}}
-                            </tr>
+                              <td>
+                              <button class="btn btn-danger" type="button" data-bs-toggle="modal" data-original-title="test" data-bs-target="#deleteService-{{ $service->id }}" data-bs-original-title="" title="">
+                                  <i class="fas fa-trash"></i>
+                                </button>
+                                @include('admin.service.delete')
+                            </td>
+                            </tr>                            
                         @endforeach
                       </tbody>
                       </table>
@@ -112,36 +124,36 @@
           </div>
 
 
-          <div class="modal fade" id="createRouteModal" tabindex="-1" aria-labelledby="createRouteModal" style="display: none;" aria-hidden="true">
+          <div class="modal fade" id="createServiceModal" tabindex="-1" aria-labelledby="createServiceModal" style="display: none;" aria-hidden="true">
               <div class="modal-dialog  modal-dialog-centered" role="document">
                 <div class="modal-content">
                   <div class="modal-header bg-primary">
-                    <h5 class="modal-title text-uppercase text-white" id="exampleModalLabel">Add a Route</h5>
+                    <h5 class="modal-title text-uppercase text-white" id="exampleModalLabel">Add a new Delivery Category</h5>
                     <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close" data-bs-original-title="" title=""></button>
                   </div>
-                  <form action="{{ route('admin.routes.store') }}" method="post">
+                  <form action="{{ route('admin.services.store') }}" method="post">
                     @csrf
                      <div class="modal-body">
                         <div class="row">
-                          <div class="col-lg-6">
+                          <div class="col-lg-12">
                             <div class="form-group">
-                              <label for="source" class="form-label">Source</label>
-                              <input type="text" name="source" class="form-control" placeholder="Nairobi" autofocus required>
-                              @error('source'){{ $message }} @enderror
+                              <label for="name" class="form-label">Delivery Category Name</label>
+                              <input type="text" name="name" class="form-control" placeholder="Furniture" autofocus required>
+                              @error('name'){{ $message }} @enderror
                             </div>
                           </div>
-                          <div class="col-lg-6">
+                          {{-- <div class="col-lg-6">
                             <div class="form-group">
                               <label for="source" class="form-label">Destination</label>
-                              <input type="text" name="destination" class="form-control" placeholder="Nakuru" required>
-                              @error('destination'){{ $message }} @enderror
+                              <input type="file" name="featured_image" class="form-control" required>
+                              @error('featured_image'){{ $message }} @enderror
                             </div>
-                          </div>
+                          </div> --}}
                         </div>
                       </div>
                       <div class="modal-footer">
                         <button class="btn btn-secondary" type="button" data-bs-dismiss="modal" data-bs-original-title="" title="">Close</button>
-                        <button class="btn btn-primary" type="submit" data-bs-original-title="" title="">Create Route</button>
+                        <button class="btn btn-primary" type="submit" data-bs-original-title="" title="">Upload Service</button>
                       </div>
                   </form>
                 </div>

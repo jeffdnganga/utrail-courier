@@ -3,13 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Route;
+use App\Models\Service;
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
-use Brian2694\Toastr\Facades\Toastr;
 
-class RouteController extends Controller
+class ServiceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +18,9 @@ class RouteController extends Controller
      */
     public function index()
     {
-        $routes = Route::latest()->get();
-        return view('admin.routes.index', compact('routes'));
+        // $services = Service::latest()->offered()->get();
+        $services = Service::latest()->get();
+        return view('admin.service.index', compact('services'));
     }
 
     /**
@@ -40,24 +41,17 @@ class RouteController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'source' => 'required',
-            'destination' => 'required'
+        $this->validate($request,[
+            'name'=>'required|unique:services,name',
         ]);
 
-        $route = new Route();
+        $service = new Service();
+        $service->name = $request->name;
+        $service->slug = Str::slug($request->name);
+        $service->user_id = Auth::id();
+        $service->save();
 
-        $source = Str::ucfirst($request->source);
-        $destination = Str::ucfirst($request->destination);
-
-
-        $route->name = $source . ' ' . $destination;
-        $route->source = $source;
-        $route->destination = $destination;
-        $route->user_id = Auth::id();
-        $route->save();
-
-        Toastr::success('Route Successfully Saved', 'Success');
+        Toastr::success('Service Successfully Saved', 'Success');
         return redirect()->back();
     }
 
@@ -93,23 +87,16 @@ class RouteController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'source' => 'required',
-            'destination' => 'required'
+            'name' => 'required|unique:services,name',
         ]);
 
-        $route = Route::findOrFail($id);
+        $service = Service::findOrFail($id);
+        $service->name = $request->name;
+        $service->slug = Str::slug($request->name);
+        // $service->user_id = Auth::id();
+        $service->save();
 
-        $source = Str::ucfirst($request->source);
-        $destination = Str::ucfirst($request->destination);
-
-
-        $route->name = $source . ' ' . $destination;
-        $route->source = $source;
-        $route->destination = $destination;
-        // $route->user_id = Auth::id();
-        $route->save();
-
-        Toastr::success('Route Successfully Updated', 'Success');
+        Toastr::success('Service Successfully Updated', 'Success');
         return redirect()->back();
     }
 
@@ -121,6 +108,10 @@ class RouteController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $service = Service::findOrFail($id);
+        $service->delete();
+
+        Toastr::success('Service successfully deleted', 'Success');
+        return redirect()->back();
     }
 }

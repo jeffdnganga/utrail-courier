@@ -14,7 +14,7 @@
                   <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="home"></i><span>Settings</span></a>
                     <ul class="nav-submenu menu-content">
                       <li><a href="{{ route('admin.routes.index') }}">Routes</a></li>
-                      <li><a href="dashboard-02.html">Ecommerce</a></li>
+                      <li><a href="{{ route('admin.services.index') }}">Services</a></li>
                     </ul>
                   </li>
                   <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="airplay"></i><span>Widgets</span></a>

@@ -1,0 +1,579 @@
+.navbar {
+    height: 100px;
+}
+.navbar .client-login-btn{
+    border: 2px solid #EE6C4D;
+    box-sizing: border-box;
+    border-radius: 10px;
+    color: #EE6C4D;
+}
+.navbar .transporter-login-btn {
+    border: 2px solid #EE6C4D;
+    box-sizing: border-box;
+    border-radius: 10px;
+    color: #ffffff;
+    background-color: #EE6C4D;
+}
+.navbar .navbar-brand span span {
+    font-weight: 200!important;
+    font-size: 20px!important;
+}
+.navbar .client-login-btn:hover{
+    background: #EE6C4D;
+    color: white;
+}
+.navbar .transporter-login-btn:hover {
+    background: #EE6C4D;
+    color: white;
+}
+.navbar .navbar-brand .fas {
+    background: -webkit-gradient(linear, center top, center bottom, from(#EE6C4D), to(#3D5A80));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.navbar .navbar-nav .nav-item a {
+    color: #3D5A80;
+}
+.navbar .navbar-nav .nav-item a:hover {
+    color: #EE6C4D;
+    transition: 0.3s;
+}
+.navbar .navbar-nav .nav-item a:focus {
+    color: #EE6C4D;
+    transform: scale(1.08);
+    transition: 0.3s;
+}
+.slider img{
+    height: 70vh;
+}
+.slider .carousel-item:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(
+     rgba(0, 0, 0, 0.35), 
+     rgba(0, 0, 0, 0.35)
+  );
+}
+.section-heading {
+    max-width: 80%;
+    margin: 0 auto;
+}
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+  }
+.hover-underline-animation:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 4px;
+    bottom: 0;
+    left: 0;
+    background-color: #EE6C4D;
+    transform-origin: center;
+    transition: transform 0.25s ease-out;
+  }
+.hover-underline-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: center;
+  }
+.unique-heading-section {
+    color: #EE6C4D;
+}
+.estimate-form {
+    max-width: 80%;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+.estimate-form label {
+    color: #3D5A80;
+    font-weight: 500;
+}
+.estimate-form .estimate-btn {
+    border-radius: 10px;
+    background: #EE6C4D;
+    color: #ffffff;
+    font-weight: 500;
+    max-width: 60%;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+}
+.estimate-form .estimate-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0px 0px 10px 5px rgba(238, 108, 77, 0.4);
+    transition: 0.3s;
+}
+.our-services .service-item {
+    display: table;
+    width: 300px;
+    height: 300px;
+    background: black;
+    color: white;
+    margin: 15px auto;
+    border-radius: 10px;
+}
+.our-services .service-item .service-title {
+    display: table-cell;
+    vertical-align: middle;
+    width: 150px;
+    padding: 50px;
+}
+.our-services .service-item:hover {
+    opacity: 0.7;
+    text-shadow: 0px 0px 10px #000000;
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+.nav-tabs .nav-item .nav-link{
+    color: #3D5A80;
+}
+.nav-tabs .nav-item .nav-link:focus {
+    color: #EE6C4D;
+}
+.tab-content .tab-pane ul li p {
+    color: #293241;
+}
+.tab-content .tab-pane ul li p .fas {
+    color: #EE6C4D;
+}
+.about-us .read-more-btn {
+    border-radius: 10px;
+    background: rgb(238, 108, 77);
+    color: #ffffff;
+    font-weight: 500;
+    width: 150px;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+}
+.about-us .read-more-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0px 0px 10px 5px rgba(238, 108, 77, 0.4);
+    transition: 0.3s;
+}
+.testimonials .container-fluid .row{
+    background: linear-gradient(rgba(0, 0, 0, 0.473), rgba(0, 0, 0, 0.473)), url('../images/testimonials-image.jpg'); 
+    background-size: 100% 100%;
+    height: 60vh;
+    color: #ffffff;
+}
+.carousel .item .img-box {
+	width: 140px;
+	height: 140px;
+	margin: 0 auto;
+	border-radius: 50%;
+}
+.carousel .img-box img {
+	width: 100%;
+	height: 100%;
+	display: block;
+	border-radius: 50%;
+}
+.footer .container-fluid .row {
+    background: linear-gradient(270deg, #293241 33.44%, #3D5A80 77.88%);
+}
+.footer h5{
+    color: #EE6C4D;
+}
+.footer ul {
+    list-style: none;
+    line-height: 30px;
+}
+.footer ul li {
+    color:#ffffff;
+}
+.footer ul li a {
+    text-decoration: none;
+    color: #ffffff;
+}
+.footer ul li a:hover {
+    color: #ff7653;
+    transition: 0.25s;
+}
+.footer p {
+    font-size: 14px;
+}
+.client-login a {
+    text-decoration: none;
+    color: #3D5A80;
+    font-size: 16px;
+}
+.client-login {
+    height: 100vh;
+}
+.client-login .back-link-div{
+    height: 40px;
+    width: 60px;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+.client-login .login-form-div {
+    max-width: 90%;
+    height: 450px;
+    margin: 60px auto;
+}
+.client-login .login-form-div .form-logo {
+    width: 56px;
+    height: 48px;
+    margin: 0 auto;
+}
+.client-login .login-form-div .form-logo img {
+    width: 100%;
+	height: 100%;
+}
+.client-login .login-form-div .login-form .row a {
+    font-size: 14px;
+}
+.client-login .login-form-div .login-form .row a:hover {
+    color: #EE6C4D;
+    transition: 0.25s;
+}
+.client-login .login-form-div .login-form .row .btn {
+    border-radius: 10px;
+    background: rgb(238, 108, 77);
+    color: #ffffff;
+    font-weight: 500;
+    width: 100px;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+
+}
+.client-login .login-form-div .login-form .row .btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0px 0px 10px 5px rgba(238, 108, 77, 0.4);
+    transition: 0.3s;
+}
+.col2 .carousel .carousel-inner img {
+    height: 100vh;
+}
+.col2 .carousel .carousel-inner .carousel-item:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(
+     rgba(0, 0, 0, 0.5), 
+     rgba(0, 0, 0, 0.5)
+  );
+}
+.col2 .carousel .carousel-inner .carousel-item .carousel-caption {
+    margin-bottom: 35%;
+    text-align: center;
+}
+.col2 .carousel .carousel-inner .carousel-item .carousel-caption h5 {
+    font-weight: 400;
+}
+/* styling for client registration page begins here */
+.client-registration a {
+    text-decoration: none;
+    color: #3D5A80;
+    font-size: 16px;
+}
+.client-registration {
+    height: 100vh;
+}
+.client-registration .back-link-div{
+    height: 40px;
+    width: 100px;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+.client-registration .registration-form-div {
+    max-width: 90%;
+    height: 450px;
+    margin: 50px auto;
+}
+.client-registration .registration-form-div .form-logo {
+    width: 56px;
+    height: 48px;
+    margin: 0 auto;
+}
+.client-registration .registration-form-div .form-logo img {
+    width: 100%;
+	height: 100%;
+}
+.client-registration .registration-form-div .registration-form .btn {
+    border-radius: 10px;
+    background: rgb(238, 108, 77);
+    color: #ffffff;
+    font-weight: 500;
+    display: block;
+    min-width: 80%;
+    margin: 0 auto 10px;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+
+}
+.client-registration .registration-form-div .registration-form .btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0px 0px 10px 5px rgba(238, 108, 77, 0.4);
+    transition: 0.3s;
+}
+.client-registration .registration-form-div .registration-form p {
+    font-size: 14px;
+    color: #293241;
+}
+.client-registration .registration-form-div .registration-form p a {
+    font-size: 14px;
+}
+.client-registration .registration-form-div .registration-form p a:hover {
+    color: #EE6C4D;
+    transition: 0.25s;
+}
+.client-registration .row .col2 .register-message {
+    position: relative;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.473), rgba(0, 0, 0, 0.473)), url('../images/client-registration-image.jpg'); 
+    background-size: 100% 100%;
+}
+.client-registration .row .col2 .register-message .register-message-text h3 {
+    position: absolute;
+    font-weight: 350;
+    color: #ffffff;
+    line-height: 40px;
+    height: 80px;
+    margin-top: 45%;
+    padding-left: 50px;
+}
+.client-registration .row .col2 .register-message .register-message-text .register-message-bottom-div {
+    position: absolute;
+    background: #EE6C4D;
+    width: 200px;
+    height: 4px;
+    margin-top: 57%;
+    margin-left: 40px;
+    border-radius: 10px;
+}
+/* styling for client registration page ends here */
+
+/* styling for transporter registration page starts here */
+.transporter-registration a {
+    text-decoration: none;
+    color: #3D5A80;
+    font-size: 16px;
+}
+.transporter-registration {
+    height: 100vh;
+}
+.transporter-registration .back-link-div{
+    height: 40px;
+    width: 100px;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+.transporter-registration .registration-form-div {
+    max-width: 90%;
+    height: 450px;
+    margin: 50px auto;
+}
+.transporter-registration .registration-form-div .form-logo {
+    width: 56px;
+    height: 48px;
+    margin: 0 auto;
+}
+.transporter-registration .registration-form-div .form-logo img {
+    width: 100%;
+	height: 100%;
+}
+.transporter-registration .registration-form-div .registration-form .btn {
+    border-radius: 10px;
+    background: rgb(238, 108, 77);
+    color: #ffffff;
+    font-weight: 500;
+    display: block;
+    min-width: 80%;
+    margin: 0 auto 10px;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+
+}
+.transporter-registration .registration-form-div .registration-form .btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0px 0px 10px 5px rgba(238, 108, 77, 0.4);
+    transition: 0.3s;
+}
+.transporter-registration .registration-form-div .registration-form p {
+    font-size: 14px;
+    color: #293241;
+}
+.transporter-registration .registration-form-div .registration-form p a {
+    font-size: 14px;
+}
+.transporter-registration .registration-form-div .registration-form p a:hover {
+    color: #EE6C4D;
+    transition: 0.25s;
+}
+.transporter-registration .row .col2 .register-message {
+    position: relative;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.473), rgba(0, 0, 0, 0.473)), url('../images/transporter-registration-image.jpg'); 
+    background-size: 100% 100%;
+}
+.transporter-registration .row .col2 .register-message .register-message-text h3 {
+    position: absolute;
+    font-weight: 350;
+    color: #ffffff;
+    line-height: 40px;
+    height: 80px;
+    margin-top: 45%;
+    padding-left: 50px;
+}
+.transporter-registration .row .col2 .register-message .register-message-text .register-message-bottom-div {
+    position: absolute;
+    background: #EE6C4D;
+    width: 200px;
+    height: 4px;
+    margin-top: 57%;
+    margin-left: 40px;
+    border-radius: 10px;
+}
+/* styling for transporter registration page ends here */
+
+.navigation .navbar .container-fluid .user-image {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+.navigation .navbar .container-fluid .user-image img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+.my-deliveries .container .card {
+    border: none;
+}
+.my-deliveries .container .card .delivery-info-col {
+    background: rgba(238, 108, 77, 0.3);
+    border: 1px solid #EE6C4D;
+}
+.my-deliveries .container .card .main-row .delivery-info-col .delivery-information .btn {
+    border-radius: 10px;
+    background: rgb(61, 90, 128);
+    color: #ffffff;
+    font-weight: 500;
+    display: block;
+    width: 150px;
+    margin: 0 auto 10px;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+}
+.my-deliveries .container .card .main-row .delivery-info-col .delivery-information .btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0px 0px 10px 5px rgba(61, 90, 128, 0.4);
+    transition: 0.3s;
+}
+.my-deliveries .container .card .card-footer {
+    background: #ffffff;
+    border: 1px solid #EE6C4D;
+    border-top: none;
+}
+.my-deliveries .container .card .card-footer .delivery-actions a {
+    text-decoration: none;
+    color: #293241;
+    font-weight: 500;
+}
+.my-deliveries .container .card .card-footer .delivery-actions a i {
+    color: #EE6C4D;
+}
+.my-deliveries .container .card .card-footer .delivery-actions a:hover {
+    color: #EE6C4D;
+    transition: 0.25s;
+} 
+.new-deliveries .posted-by {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.new-deliveries .posted-by .client-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.new-deliveries .posted-by .client-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.new-deliveries .posted-by .client-name {
+    padding-left: 5px;
+    padding-top: 10px;
+    color: #EE6C4D;
+} 
+.new-deliveries .route-time p {
+    font-size: 14px;
+    line-height: 1px;
+    font-weight: 500;
+    color: #EE6C4D;
+}
+.new-deliveries .card .dimensions-weight-date {
+    line-height: 24px;
+    padding-bottom: 10px;
+    color: #293241;
+}
+.new-deliveries .card .more-info-peek {
+    font-size: 14px;
+    padding-bottom: 10px;
+}
+.bids-section .bid {
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.25);
+    max-width: 80%;
+    margin: 10px auto;
+    padding: 10px;
+}
+.bids-section .bid .col1{
+    border-right: 1px solid #ee6d4da4;
+}
+.bids-section .bid .bidder-profile {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.bids-section .bid .bidder-profile .bidder-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+.bids-section .bid .bidder-profile .bidder-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.bids-section .bid .bidder-message {
+    font-size: 14px;
+}
+.bids-section .bid .bidder-contact {
+    color: #3D5A80;
+    font-size: 18px;
+}
+.bids-section .bid .bidder-contact .smaller-text {
+    font-size: 12px;
+}
+.bids-section .bid .col2 .book-btn{
+    width: 200px;
+    margin: 10px auto;
+}
+
+.post-delivery-btn{
+    border: 2px solid #EE6C4D;
+    box-sizing: border-box;
+    border-radius: 10px;
+    color: #ffffff;
+    background-color: #EE6C4D;
+    padding: 10px;
+    text-decoration: none;
+}
+.post-delivery-btn:hover{
+    background: linear-gradient(45deg, #EE6C4D, #fb542a);
+    color: white;
+}
